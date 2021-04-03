@@ -35,7 +35,7 @@ export function Header() {
           variant="unstyled"
           px="4"
           mr="4"
-          placeholder="Buscar ma plataforma"
+          placeholder="Buscar na plataforma"
           _placeholder={{ color: 'gray.400' }}
         />
 
