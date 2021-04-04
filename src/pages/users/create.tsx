@@ -1,5 +1,5 @@
 import { Box, Button, Divider, Flex, Heading, HStack, SimpleGrid, VStack } from '@chakra-ui/react';
-import { SubmitHandler, useForm, useFormState } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup'
 import Link from 'next/link';
@@ -25,11 +25,9 @@ const createUserFormSchema = yup.object().shape({
 });
 
 export default function CreateUser() {
-  const { register, handleSubmit, formState, control } = useForm({
+  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm({
     resolver: yupResolver(createUserFormSchema),
   });
-
-  const { errors } = useFormState({ control });
 
   const handleCreateUser: SubmitHandler<CreateUserFormData> = async (values) => {
     await new Promise(resolve => setTimeout(resolve, 2000));
@@ -62,14 +60,14 @@ export default function CreateUser() {
                 name="name"
                 label="Nome completo"
                 error={errors.name}
-                {...register}
+                {...register('name')}
               />
               <Input
                 name="email"
                 type="email"
                 label="E-mail"
                 error={errors.email}
-                {...register}
+                {...register('email')}
               />
             </SimpleGrid>
 
@@ -79,14 +77,14 @@ export default function CreateUser() {
                 type="password"
                 label="Senha"
                 error={errors.password}
-                {...register}
+                {...register('password')}
               />
               <Input
                 name="password_confirmation"
                 type="password"
                 label="Confirmação da senha"
                 error={errors.password_confirmation}
-                {...register}
+                {...register('password_confirmation')}
               />
             </SimpleGrid>
           </VStack>
@@ -99,7 +97,7 @@ export default function CreateUser() {
               <Button
                 type="submit"
                 colorScheme="pink"
-                isLoading={formState.isSubmitting}
+                isLoading={isSubmitting}
               >
                 Salvar
               </Button>
