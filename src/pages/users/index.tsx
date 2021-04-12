@@ -1,4 +1,3 @@
-import NextLink from 'next/link';
 import { Box, Button, Checkbox, Flex, Heading, Icon, Link, Spinner, Table, Tbody, Td, Text, Th, Thead, Tr, useBreakpointValue } from '@chakra-ui/react';
 import { useState } from 'react';
 import { RiAddLine } from 'react-icons/ri';
