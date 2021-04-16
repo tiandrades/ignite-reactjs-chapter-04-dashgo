@@ -3,8 +3,8 @@
   <p>A simple users manager. ✨</p>
   <hr/>
   <p>
-    <a href="#-technologies">Technologies</a>&nbsp|&nbsp;
-    <a href="#-about">About</a>&nbsp|&nbsp;
+    <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-how-to-run">How to run</a>
   </p>
 </div>
